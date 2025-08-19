@@ -1,67 +1,51 @@
+/* Default light theme */
 body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    animation: colorchange 20s infinite alternate;
-}
-
-@keyframes colorchange {
-    0% { background-color: #FFC0CB; } /* Pink */
-    25% { background-color: #ADD8E6; } /* Light Blue */
-    50% { background-color: #90EE90; } /* Light Green */
-    75% { background-color: #FFD700; } /* Gold */
-    100% { background-color: #FFA07A; } /* Light Salmon */
+    background-color: #f0f0f0;
+    color: #333;
+    transition: background-color 0.5s, color 0.5s;
 }
 
 .calculator {
-    width: 300px;
-    background-color: rgba(255, 255, 255, 0.2);
-    border-radius: 15px;
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Dark theme styles */
+.dark-theme {
+    background-color: #121212;
+    color: #e0e0e0;
+}
+
+.dark-theme .calculator {
+    background-color: #1e1e1e;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+/* Rainbow theme styles */
+.rainbow-theme {
+    animation: rainbowBackground 10s infinite;
+}
+
+@keyframes rainbowBackground {
+    0% { background-color: red; }
+    16.6% { background-color: orange; }
+    33.3% { background-color: yellow; }
+    50% { background-color: green; }
+    66.6% { background-color: blue; }
+    83.3% { background-color: indigo; }
+    100% { background-color: violet; }
+}
+
+/* Other sections will also need styles */
+.other-calculators, .theme-switcher {
+    background-color: #fff;
     padding: 20px;
-    backdrop-filter: blur(10px);
+    border-radius: 8px;
+    margin-top: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-#display {
-    width: calc(100% - 20px);
-    padding: 10px;
-    font-size: 2em;
-    text-align: right;
-    border: none;
-    background-color: rgba(255, 255, 255, 0.5);
-    border-radius: 10px;
-    margin-bottom: 20px;
-    color: #333;
-}
-
-.buttons {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 10px;
-}
-
-button {
-    padding: 20px;
-    font-size: 1.5em;
-    border: none;
-    border-radius: 10px;
-    cursor: pointer;
-    background-color: rgba(255, 255, 255, 0.5);
-    transition: background-color 0.3s;
-}
-
-button:hover {
-    background-color: rgba(255, 255, 255, 0.8);
-}
-
-.equal {
-    grid-row: span 2;
-    background-color: #ff9f43;
-}
-
-.zero {
-    grid-column: span 2;
+.dark-theme .other-calculators, .dark-theme .theme-switcher {
+    background-color: #1e1e1e;
+    color: #e0e0e0;
 }
